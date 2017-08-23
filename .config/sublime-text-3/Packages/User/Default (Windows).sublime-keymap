@@ -1,0 +1,64 @@
+[
+	// move to the match bracket
+	{ "keys": ["super+["], "command": "move_to", "args": {"to": "brackets"} },
+	{ "keys": ["super+]"], "command": "move_to", "args": {"to": "brackets"} },
+
+	// rectangluar selection
+	{ "keys": ["up"], "command": "single_selection", "context":
+		[
+			{ "key": "num_selections", "operator": "not_equal", "operand": 1 }
+		]
+	},
+	{ "keys": ["down"], "command": "single_selection", "context":
+		[
+			{ "key": "num_selections", "operator": "not_equal", "operand": 1 }
+		]
+	},
+	{ "keys": ["left"], "command": "single_selection", "context":
+		[
+			{ "key": "num_selections", "operator": "not_equal", "operand": 1 }
+		]
+	},
+	{ "keys": ["right"], "command": "single_selection", "context":
+		[
+			{ "key": "num_selections", "operator": "not_equal", "operand": 1 }
+		]
+	},
+	{ "keys": ["left"], "command": "move", "args": {"by": "characters", "forward": false} },
+	{ "keys": ["right"], "command": "move", "args": {"by": "characters", "forward": true} },
+	{ "keys": ["alt+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["alt+down"], "command": "select_lines", "args": {"forward": true} },
+
+	// view
+	{ "keys": ["alt+o"], "command": "switch_file_to_group" },
+	{ "keys": ["f4"], "command": "clone_file_to_group" },
+	{ "keys": ["f5"], "command": "next_result" },
+	{ "keys": ["shift+f5"], "command": "prev_result" },
+
+	// Mac key bindings
+	{ "keys": ["ctrl+g"], "command": "find_next" },
+	{ "keys": ["ctrl+shift+g"], "command": "find_prev" },
+	{ "keys": ["ctrl+left"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+	{ "keys": ["ctrl+right"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+	{ "keys": ["ctrl+shift+left"], "command": "move_to", "args": {"to": "bol", "extend": true} },
+	{ "keys": ["ctrl+shift+right"], "command": "move_to", "args": {"to": "eol", "extend": true} },
+	{ "keys": ["ctrl+up"], "command": "move_to", "args": {"to": "bof", "extend": false} },
+	{ "keys": ["ctrl+down"], "command": "move_to", "args": {"to": "eof", "extend": false} },
+	{ "keys": ["ctrl+shift+up"], "command": "move_to", "args": {"to": "bof", "extend": true} },
+	{ "keys": ["ctrl+shift+down"], "command": "move_to", "args": {"to": "eof", "extend": true} },
+
+	// Windows key bindings
+	// auto complete
+	{ "keys": ["super+space"], "command": "auto_complete" },
+	{ "keys": ["super+space"], "command": "replace_completion_with_auto_complete", "context":
+		[
+			{ "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
+			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
+			{ "key": "setting.tab_completion", "operator": "equal", "operand": true }
+		]
+	},
+
+	// switch file
+	//{ "keys": ["super+alt+up"], "command": "switch_file", "args": {"extensions": ["cpp", "cxx", "cc", "c", "hpp", "hxx", "h", "ipp", "inl", "m", "mm"]} },
+	//{ "keys": ["alt+o"], "command": "switch_file", "args": {"extensions": ["cpp", "cxx", "cc", "c", "hpp", "hxx", "h", "ipp", "inl", "m", "mm"]} }
+]
